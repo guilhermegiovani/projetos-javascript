@@ -16,42 +16,69 @@ body {
 }
 
 #container {
-    background-color: rgb(255, 191, 0);
-    border-radius: 10px;
-    width: 325px;
-    height: 550px;
+    background-color: #ff9d00;
+    border-radius: 15px;
+    width: 300px;
+    height: 450px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+h1 {
+    font-size: 1.8rem;
+}
+
 hr {
     border: 3px solid black;
-    width: 325px;
+    width: 300px;
+    margin-bottom: 20px;
 }
 
 #imcForm {
-    background-color: red;
-    width: calc(300px - 40px);
-    height: 250px;
+    width: 250px;
+    margin-bottom: 30px;
 }
 
 label {
-    font-weight: 600;
+    font-weight: bold;
     padding: 10px;
+    margin-right: 40px;
 }
 
 input {
     border: none;
     border-radius: 3px;
-    width: 100px;
+    width: 125px;
     padding: 10px;
     margin-bottom: 15px;
 }
 
+#weight {
+    margin-left: 7px;
+}
+
+button {
+    background-color: black;
+    color: #ff9d00;
+    font-size: bold;
+    border: none;
+    width: 230px;
+    padding: 7px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
 #resultImc {
-    background-color: blue;
-    width: calc(325px - 40px);
+    background-color: black;
+    color: #ff9d00;
+    font-style: italic;
+    width: 230px;
     height: 150px;
+    padding: 7px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
