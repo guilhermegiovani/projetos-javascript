@@ -17,11 +17,9 @@ function desligarLamp() {
     lampQuebrada.classList.add("hiden")
 }
 
-function quebrarLamp() {
-    lampDesligada.classList.add("hiden")
-    lampLigada.classList.add("hiden")
-    lampQuebrada.classList.remove("hiden")
-}
+// function isLampBroken() {
+//     return lamp.src.indeOf('quebrada') > -1
+// }
 
 btnLigar.addEventListener('click', ligarLamp)
 
