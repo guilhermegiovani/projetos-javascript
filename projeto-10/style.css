@@ -48,7 +48,7 @@
     align-items: center;
     width: 50px;
     color: #00000000;
-    user-select: none;
+    /* user-select: none; */
     z-index: 1;
 }
 
