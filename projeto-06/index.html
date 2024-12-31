@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="estilos/style.css">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   
 </head>
 <body>
@@ -22,10 +23,13 @@
       <p>Subscribe and get notified</p>
     </div>
 
-    <div class="forms">
-      <input type="text" placeholder="Your email address...">
-
+    <form class="forms" id="emailForm">
+      <input type="text" id="emailInput" placeholder="Your email address...">
       <button>Notify Me</button>
+    </form>
+    
+    <div class="mensagem">
+      <p id="mensagem" class="hidden">teste</p>
     </div>
 
     <div class="illustration">
@@ -33,11 +37,11 @@
     </div>
 
     <div class="social_media">
-      <button><img class="facebook" src="./images/facebook.png" alt="logo-facebook"></button>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
 
-      <button><img src="./images/twitter.png" alt="logo_twitter"></button>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
 
-      <button><img src="./images/instagram.png" alt="logo_instagram"></button>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
   </main>

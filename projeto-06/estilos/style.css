@@ -22,11 +22,10 @@
 }
 
 body {
+    padding: 50px 0;
 }
 
 main {
-    background-color: rgb(100, 155, 70);
-    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +40,6 @@ main {
 }
 
 .header {
-    background-color: brown;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +55,7 @@ main {
     font-weight: 300;
     color: hsl(0, 0%, 59%);
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .header span {
@@ -71,21 +69,25 @@ main {
 }
 
 .forms {
-    background-color: blue;
     height: 50px;
-    margin-top: 25px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .forms input {
-    padding: 15px;
+    padding: 15px 20px;
     border-radius: 50px;
-    border-color: hsl(223, 100%, 88%);
+    border: 1px solid hsl(223, 100%, 88%);
     width: 400px;
     margin-right: 10px;
+    outline: hsl(223, 100%, 88%);
+}
+
+.forms input::placeholder {
+    color: hsl(0, 0%, 59%);
 }
 
 .forms button {
@@ -94,13 +96,22 @@ main {
     width: 170px;
     padding: 15px;
     border-radius: 50px;
+    border: none;
+    box-shadow: 0px 5px 5px hsla(223, 100%, 88%, 0.689);
+    cursor: pointer;
+}
+
+.mensagem {
+    margin-bottom: 60px;
+    width: 530px;
+    font-size: .9em;
+    font-style: italic;
 }
 
 .illustration {
-    background-color: blueviolet;
     text-align: center;
     height: 380px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .illustration img {
@@ -108,16 +119,50 @@ main {
 }
 
 .social_media {
-    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.social_media button {
-    border: none;
-}
-
-.social_media img {
-    width: 40px;
+.fa-brands  {
     border: 1px solid hsl(223, 100%, 88%);
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px;
+    font-size: 1.1em;
+    color: hsl(223, 87%, 63%);
+}
+
+.fa-brands:hover {
+    background-color: hsl(223, 87%, 63%);
+    color: white;
+}
+
+.fa-facebook-f {
+    padding: 10px 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    color: hsl(0, 0%, 59%);
+    font-size: .8em;
+}
+
+.error {
+    color: red;
+    display: block;
+}
+
+.success {
+    color: rgb(0, 197, 0);
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
