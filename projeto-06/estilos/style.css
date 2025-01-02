@@ -71,10 +71,13 @@ main {
 .forms {
     height: 50px;
     margin-top: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.input_mensagem {
+    width: 400px;
 }
 
 .forms input {
@@ -82,30 +85,33 @@ main {
     border-radius: 50px;
     border: 1px solid hsl(223, 100%, 88%);
     width: 400px;
-    margin-right: 10px;
     outline: hsl(223, 100%, 88%);
+    height: 50px;
 }
 
 .forms input::placeholder {
-    color: hsl(0, 0%, 59%);
+    color: hsl(223, 100%, 88%);
 }
 
 .forms button {
     background-color: hsl(223, 87%, 63%);
     color: white;
-    width: 170px;
-    padding: 15px;
+    width: 180px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 10px;
     border-radius: 50px;
     border: none;
     box-shadow: 0px 5px 5px hsla(223, 100%, 88%, 0.689);
     cursor: pointer;
 }
 
-.mensagem {
-    margin-bottom: 60px;
-    width: 530px;
+#mensagem {
+    /* margin-bottom: 60px; */
     font-size: .9em;
     font-style: italic;
+    margin-top: 5px;
+    padding-left: 25px;
 }
 
 .illustration {
@@ -165,4 +171,88 @@ footer p {
 
 .hidden {
     display: none;
+}
+
+@media screen and (max-width: 670px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 400px;
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header,
+    .forms,
+    .illustration,
+    .social_media {
+        width: 400px;
+    }
+
+    .header img {
+        width: 80px;
+    }
+
+    .header h1 {
+        font-size: 1.7em;
+    }
+
+    .header p {
+        font-size: .9em;
+    }
+
+    .forms {
+        flex-direction: column;
+        height: 130px;
+        align-items: center;
+    }
+
+    .input_mensagem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input_mensagem input {
+        padding: 20px 35px;
+        height: 40px;
+    }
+
+    .forms button {
+        margin-top: 15px;
+        margin-left: 0;
+        height: 40px;
+    }
+
+    .forms input, .forms button {
+        width: 330px;
+    }
+
+    #mensagem {
+        width: 330px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: .8em;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .illustration img {
+        width: 350px;
+    }
+
+    .social_media {
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    footer {
+        width: 400px;
+    }
 }
