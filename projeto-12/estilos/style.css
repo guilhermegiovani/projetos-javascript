@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url("../assets/images/background-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-attachment: scroll;
+    font-family: "Inconsolata", serif;
+}
+
+main {
+    background-color: rgb(0, 158, 158);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 100vh;
+    padding-top: 25px;
+}
+
+.logo_full {
+    margin-bottom: 45px;
+    width: 180px;
+}
+
+h1 {
+    font-size: 3.0em;
+    width: 80%;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 1.2em;
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 30px;
+}
+
+#forms_conf {
+    background-color: blue;
+    width: 60%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.forms_avatar input {
+    display: none;
+}
+
+.title_upload {
+    color: hsl(0, 0%, 100%);
+}
+
+.aviso_upload {
+    color: hsl(245, 15%, 58%);
+}
+
+.text_upload {
+    color: hsl(252, 6%, 83%);
+}
+
+.upload_avatar {
+    border: 1px solid black;
+}
+
+.upload_avatar label {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.upload_avatar img {
+    border: 1px solid black;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+}
