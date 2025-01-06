@@ -11,21 +11,28 @@
 body {
     display: flex;
     justify-content: center;
-    background-image: url("../assets/images/background-desktop.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-image: url("../assets/images/pattern-lines.svg"), url("../assets/images/background-desktop.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 1400 1000px, 100% auto;
+    background-position: top;
     background-attachment: scroll;
     font-family: "Inconsolata", serif;
+    position: relative;
 }
 
+/* .lines {
+    width: 100vw;
+} */
+
 main {
-    background-color: rgb(0, 158, 158);
+    /* background-color: rgb(0, 158, 158); */
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 50vw;
     height: 100vh;
-    padding-top: 25px;
+    padding: 25px 0;
+    position: absolute;
 }
 
 .logo_full {
@@ -48,12 +55,15 @@ h1 {
 }
 
 #forms_conf {
-    background-color: blue;
+    /* background-color: blue; */
     width: 60%;
     height: 70%;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.forms_avatar {
 }
 
 
@@ -63,10 +73,20 @@ h1 {
 
 .title_upload {
     color: hsl(0, 0%, 100%);
+    font-size: 15px;
 }
 
 .aviso_upload {
     color: hsl(245, 15%, 58%);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.aviso_upload img {
+    margin-right: 5px;
+    width: 14px;
 }
 
 .text_upload {
@@ -74,25 +94,101 @@ h1 {
 }
 
 .upload_avatar {
-    border: 1px solid black;
+    border: 1px dashed hsla(246, 15%, 58%, 0.500);
+    border-radius: 10px;
+    margin: 10px 0;
+    width: 380px;
+}
+
+.upload_avatar:focus {
+    border-color: white;
 }
 
 .upload_avatar label {
-    background-color: transparent;
+    background-color: hsla(246, 15%, 58%, 0.150);
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 12px;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.upload_avatar img {
-    border: 1px solid black;
+.upload_avatar label:hover {
+    background-color: hsla(246, 15%, 58%, 0.300);
+
+    span {
+        border: 1px solid hsla(246, 15%, 58%, 0.500);
+    }
+}
+
+.upload_avatar span {
+    background-color: hsla(245, 15%, 58%, 0.200);
     margin-bottom: 15px;
     padding: 5px;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload_avatar span img {
+    width: 25px;
+}
+
+.upload_avatar p {
+    color: hsla(252, 6%, 83%, 0.76);
+    font-size: 15px;
 }
 
 .forms {
     display: flex;
     flex-direction: column;
+    color: white;
+}
+
+.forms label {
+    font-size: 15px;
+}
+
+.forms input {
+    width: 380px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid hsla(246, 15%, 58%, 0.500);
+    background-color: hsla(246, 15%, 58%, 0.150);
+    color: hsla(252, 6%, 83%, 0.800);
+    transition: .2s;
+    outline: none;
+}
+
+.forms input:hover {
+    background-color: hsla(246, 15%, 58%, 0.300);
+}
+
+.forms input::placeholder {
+    color: hsla(252, 6%, 83%, 0.800);
+}
+
+#forms_conf button {
+    width: 380px;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: hsl(7, 88%, 67%);
+    color: hsl(248, 70%, 10%);
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#forms_conf button:hover {
+    background-color: hsl(7, 71%, 60%);
+    box-shadow: 0px 3px 0px hsl(7, 88%, 67%);
 }

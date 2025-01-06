@@ -11,6 +11,10 @@
 </head>
 <body>
 
+  <img class="circle_top" src="assets/images/pattern-circle.svg" alt="circle">
+
+  <!-- <img class="lines" src="assets/images/pattern-lines.svg" alt="lines"> -->
+
   <!-- Form starts -->
 
   <main>
@@ -27,14 +31,18 @@
 
         <div class="upload_avatar">
           <label for="upload_avatar">
-            <img src="assets/images/icon-upload.svg" alt="upload">
+            <span><img src="assets/images/icon-upload.svg" alt="upload"></span>
             <p class="text_upload">Drag and drop or click to upload</p>
           </label>
         </div>
 
         <input type="file" id="upload_avatar" accept="image/*">
 
-        <p class="aviso_upload"><img src="assets/images/icon-info.svg" alt="info"> Upload your photo (JPG or PNG, max size: 500KB).</p>
+        <div class="aviso_upload">
+          <img src="assets/images/icon-info.svg" alt="info">
+          <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div>
+
       </div>
 
       <div class="forms">
