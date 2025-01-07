@@ -8,21 +8,47 @@
     padding: 0;
 }
 
+
+
 body {
     display: flex;
     justify-content: center;
     background-image: url("../assets/images/pattern-lines.svg"), url("../assets/images/background-desktop.png");
     background-repeat: no-repeat, no-repeat;
-    background-size: 1400 1000px, 100% auto;
-    background-position: top;
+    background-size: cover, cover;
+    background-position: center, center;
     background-attachment: scroll;
     font-family: "Inconsolata", serif;
     position: relative;
 }
 
-/* .lines {
-    width: 100vw;
-} */
+/* url("../assets/images/pattern-lines.svg"), */
+
+.circle_top {
+    position: absolute;
+    top: -85px;
+    left: 100px;
+}
+
+.circle_center {
+    position: absolute;
+    top: 380px;
+    right: 350px;
+}
+
+.squiggly_line_top {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 500px;
+}
+
+.squiggly_line_bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 650px;
+}
 
 main {
     /* background-color: rgb(0, 158, 158); */
@@ -30,9 +56,9 @@ main {
     align-items: center;
     flex-direction: column;
     width: 50vw;
-    height: 100vh;
-    padding: 25px 0;
-    position: absolute;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 .logo_full {
@@ -40,9 +66,15 @@ main {
     width: 180px;
 }
 
+.forms_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 h1 {
     font-size: 3.0em;
-    width: 80%;
+    width: 90%;
     text-align: center;
     color: hsl(0, 0%, 100%);
     margin-bottom: 15px;
@@ -191,4 +223,8 @@ h1 {
 #forms_conf button:hover {
     background-color: hsl(7, 71%, 60%);
     box-shadow: 0px 3px 0px hsl(7, 88%, 67%);
+}
+
+.hidden {
+    display: none;
 }

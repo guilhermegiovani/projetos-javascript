@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="estilos/style.css">
+  <script src="main.js" defer></script>
   
   <title>Conference ticket generator</title>
 </head>
@@ -13,7 +14,7 @@
 
   <img class="circle_top" src="assets/images/pattern-circle.svg" alt="circle">
 
-  <!-- <img class="lines" src="assets/images/pattern-lines.svg" alt="lines"> -->
+  <img class="squiggly_line_top" src="assets/images/pattern-squiggly-line-top.svg" alt="pattern-squiggly-line-top">
 
   <!-- Form starts -->
 
@@ -21,46 +22,64 @@
     
     <img class="logo_full" src="assets/images/logo-full.svg" alt="full">
 
-    <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-    <p class="subtitulo">Secure your spot at next year's biggest coding conference.</p>
+    <div class="forms_container hidden">
 
-    <form id="forms_conf">
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p class="subtitulo">Secure your spot at next year's biggest coding conference.</p>
 
-      <div class="forms_avatar">
-        <p class="title_upload">Upload Avatar</p>
+      <form id="forms_conf">
 
-        <div class="upload_avatar">
-          <label for="upload_avatar">
-            <span><img src="assets/images/icon-upload.svg" alt="upload"></span>
-            <p class="text_upload">Drag and drop or click to upload</p>
-          </label>
+        <div class="forms_avatar">
+          <p class="title_upload">Upload Avatar</p>
+
+          <div class="upload_avatar">
+            <label for="upload_avatar">
+              <span><img src="assets/images/icon-upload.svg" alt="upload"></span>
+              <p class="text_upload">Drag and drop or click to upload</p>
+            </label>
+          </div>
+
+          <input type="file" id="upload_avatar" accept="image/*">
+
+          <div class="aviso_upload">
+            <img src="assets/images/icon-info.svg" alt="info">
+            <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+          </div>
+
         </div>
 
-        <input type="file" id="upload_avatar" accept="image/*">
+        <div class="forms">
 
-        <div class="aviso_upload">
-          <img src="assets/images/icon-info.svg" alt="info">
-          <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+          <label for="full_name">Full Name</label>
+          <input type="text" id="full_name">
+          <label for="email_address">Email Address</label>
+          <input type="email" id="email_address" placeholder="example@email.com">
+          <label for="github_username">GitHub Username</label>
+          <input type="text" id="github_username" placeholder="@yourusername">
+
         </div>
 
-      </div>
+        <button type="submit">Generate My Ticket</button>
 
-      <div class="forms">
-        <label for="full_name">Full Name</label>
-        <input type="text" id="full_name">
+      </form>
 
-        <label for="email_address">Email Address</label>
-        <input type="email" id="email_address" placeholder="example@email.com">
+    </div>
 
-        <label for="github_username">GitHub Username</label>
-        <input type="text" id="github_username" placeholder="@yourusername">
-      </div>
+    <div id="ticket_container">
 
-      <button type="submit">Generate My Ticket</button>
+      <h1>Congrats, <span class="span_name">Nome</span>! Your ticket is ready.</h1>
 
-    </form>
+      <p>We've emailed your ticket to <span class="span_email">EMAIL</span> and will send updates in the run up to the event.</p>
+
+      <img src="assets/images/pattern-ticket.svg" alt="ticket">
+
+    </div>
 
   </main>
+
+  <img class="squiggly_line_bottom" src="assets/images/pattern-squiggly-line-bottom.svg" alt="squiggly-line-bottom">
+
+  <img class="circle_center" src="assets/images/pattern-circle.svg" alt="circle">
 
   <!--
   Your Journey to Coding Conf 2025 Starts Here!
