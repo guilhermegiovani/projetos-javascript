@@ -210,6 +210,7 @@ h1 {
 
 #forms_conf button {
     width: 380px;
+    height: 100%;
     padding: 15px;
     border-radius: 10px;
     border: none;
@@ -227,4 +228,95 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+/* ticket */
+
+.container {
+    height: 90vh;
+}
+
+#ticket_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ticket_title {
+    margin-bottom: 25px;
+}
+
+.span_name {
+    color: transparent;
+    background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    
+}
+
+.ticket_text {
+    color: hsl(252, 6%, 83%);
+    width: 52%;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.span_email {
+    color: hsla(7, 88%, 67%, 0.800);
+}
+
+.ticket {
+    /* background-color: rgba(50, 137, 137, 0.398); */
+    display: flex;
+    border-radius: 10px;
+    position: relative;
+    
+}
+
+#ticket_card {
+    width: 500px;
+}
+
+.ticket_mark {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+}
+
+h2 {
+    position: absolute;
+    top: 20px;
+    left: 65px;
+    height: 30px;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.text_data {
+    position: absolute;
+    top: 60px;
+    left: 65px;
+    color: hsla(252, 6%, 83%, 0.850);
+    font-size: .8em;
+}
+
+.ticket_avatar {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.name {
+    position: absolute;
+    display: flex;
+    align-items: end;
+    bottom: 55px;
+    left: 93px;
+    color: white;
+    font-weight: 400;
 }
