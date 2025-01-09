@@ -30,10 +30,30 @@ body {
     left: 100px;
 }
 
+.circle_top_ticket {
+    top: -85px;
+    left: 58px;
+}
+
 .circle_center {
-    position: absolute;
+    /* position: absolute;
     top: 380px;
-    right: 350px;
+    right: 350px; */
+    margin-left: -77px;
+}
+
+.teste {
+    position: absolute;
+    top: 404px;
+    right: 360px;
+    overflow: hidden;
+    width: 140px;
+    height: 217px;
+}
+
+.esconder_circle {
+    /* clip-path: inset(0 0 0 66px); */
+    top: 405px;
 }
 
 .squiggly_line_top {
@@ -94,10 +114,6 @@ h1 {
     align-items: center;
     flex-direction: column;
 }
-
-.forms_avatar {
-}
-
 
 .forms_avatar input {
     display: none;
@@ -258,7 +274,7 @@ h1 {
     color: hsl(252, 6%, 83%);
     width: 52%;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 }
 
 .span_email {
@@ -311,12 +327,63 @@ h2 {
     border-radius: 10px;
 }
 
+/* .name_github {
+    position: absolute;
+    color: white;
+    background-color: black;
+    bottom: 20px;
+    left: 80px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name_github p {
+    background-color: blue;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+} */
+
 .name {
     position: absolute;
     display: flex;
     align-items: end;
-    bottom: 55px;
-    left: 93px;
+    bottom: 53px;
+    left: 90px;
     color: white;
     font-weight: 400;
+}
+
+.icon_github {
+    position: absolute;
+    bottom: 27px;
+    left: 90px;
+    width: 18px;
+}
+
+.github_account {
+    position: absolute;
+    bottom: 27px;
+    left: 115px;
+    color: hsla(252, 6%, 83%, 0.850);
+    font-size: .8em;
+    height: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.id_number {
+    position: absolute;
+    color: hsl(245, 15%, 58%);
+    writing-mode: vertical-rl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    font-weight: 500;
+    height: 100%;
+    width: 95px;
+    right: 0;
 }
