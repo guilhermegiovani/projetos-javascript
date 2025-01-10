@@ -12,7 +12,8 @@
 </head>
 <body>
 
-  <img class="circle_top circle_top_ticket" src="assets/images/pattern-circle.svg" alt="circle">
+  <img class="circle_top" src="assets/images/pattern-circle.svg" alt="circle">
+  <!-- circle_top_ticket -->
 
   <img class="squiggly_line_top" src="assets/images/pattern-squiggly-line-top.svg" alt="pattern-squiggly-line-top">
 
@@ -22,7 +23,7 @@
     
     <img class="logo_full" src="assets/images/logo-full.svg" alt="full">
 
-    <div class="forms_container hidden">
+    <div class="forms_container">
 
       <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
       <p class="subtitulo">Secure your spot at next year's biggest coding conference.</p>
@@ -34,12 +35,12 @@
 
           <div class="upload_avatar">
             <label for="upload_avatar">
-              <span><img src="assets/images/icon-upload.svg" alt="upload"></span>
+              <span><img src="assets/images/icon-upload.svg" alt="upload" id="foto_avatar"></span>
               <p class="text_upload">Drag and drop or click to upload</p>
             </label>
+            <input type="file" id="upload_avatar" accept="image/*">
           </div>
 
-          <input type="file" id="upload_avatar" accept="image/*">
 
           <div class="aviso_upload">
             <img src="assets/images/icon-info.svg" alt="info">
@@ -59,13 +60,13 @@
 
         </div>
 
-        <button type="submit">Generate My Ticket</button>
+        <button type="submit" id="btn_forms">Generate My Ticket</button>
 
       </form>
 
     </div>
 
-    <div class="container" >
+    <div class="container hidden" >
       <div id="ticket_container">
         <h1 class="ticket_title">Congrats, <span class="span_name">Guilherme Nobre!</span> Your ticket is ready.</h1>
         <p class="ticket_text">We've emailed your ticket to <span class="span_email">guiffgnobre16@gmail.com</span> and will send updates in the run up to the event.</p>
@@ -94,7 +95,7 @@
 
   <img class="squiggly_line_bottom" src="assets/images/pattern-squiggly-line-bottom.svg" alt="squiggly-line-bottom">
 
-  <div class="teste"><img class="circle_center" src="assets/images/pattern-circle.svg" alt="circle"></div>
+  <img class="circle_center" src="assets/images/pattern-circle.svg" alt="circle">
 
   <!--
   Your Journey to Coding Conf 2025 Starts Here!

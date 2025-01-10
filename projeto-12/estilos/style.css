@@ -36,19 +36,10 @@ body {
 }
 
 .circle_center {
-    /* position: absolute;
-    top: 380px;
-    right: 350px; */
-    margin-left: -77px;
-}
-
-.teste {
     position: absolute;
-    top: 404px;
-    right: 360px;
-    overflow: hidden;
-    width: 140px;
-    height: 217px;
+    top: 380px;
+    right: 350px;
+    /* margin-left: -77px; */
 }
 
 .esconder_circle {
