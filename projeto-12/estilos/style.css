@@ -133,7 +133,7 @@ h1 {
 }
 
 .upload_avatar {
-    border: 1px dashed hsla(246, 15%, 58%, 0.500);
+    border: 2px dashed hsla(246, 15%, 58%, 0.500);
     border-radius: 10px;
     margin: 10px 0;
     width: 380px;
@@ -146,18 +146,30 @@ h1 {
 .upload_avatar label {
     background-color: hsla(246, 15%, 58%, 0.150);
     width: 100%;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 12px;
     cursor: pointer;
-    transition: .2s;
+    transition: .3s;
 }
 
 .upload_avatar label:hover {
     background-color: hsla(246, 15%, 58%, 0.300);
 
     span {
+        border: 1px solid hsla(246, 15%, 58%, 0.500);
+        background-color: hsla(245, 15%, 58%, 0.400);
+    }
+}
+
+.upload_avatar.active {
+    background-color: hsla(246, 15%, 58%, 0.300);
+    transition: .3s;
+
+    span {
+        background-color: hsla(245, 15%, 58%, 0.400);
         border: 1px solid hsla(246, 15%, 58%, 0.500);
     }
 }
