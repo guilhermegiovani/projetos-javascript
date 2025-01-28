@@ -2,7 +2,7 @@ const forms_conf = document.getElementById("forms_conf")
 
 
 function verificarEmail(email) {
-    const emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return emailRegex.test(email)
 }
@@ -18,12 +18,14 @@ function onLeave() {
     upload_avatar.classList.remove("active")
 }
 
+// Mostrar img ao dropar a imagem
+
 upload_avatar.addEventListener("dragover", onEnter)
 upload_avatar.addEventListener("dragleave", onLeave)
 upload_avatar.addEventListener("dragend", onLeave)
 upload_avatar.addEventListener("drop", (event) => {
     event.preventDefault()
-    
+
     onLeave()
 })
 
@@ -33,8 +35,6 @@ avatar_foto.addEventListener('change', (event) => {
     event.preventDefault()
 
     if(avatar_foto.files.length > 0) {
-        console.log(avatar_foto.files)
-
         const maxSize = 500 * 1024
         const type = avatar_foto.files[0].type
         const formats = ["image/jpeg", "image/jpg", "image/png"]
@@ -50,32 +50,61 @@ avatar_foto.addEventListener('change', (event) => {
         }
 
         const img_avatar = document.getElementById("foto_avatar")
-        img_avatar.src = `assets/images/${avatar_foto.files[0].name}`
-
         img_avatar.style.borderRadius = "10px"
         img_avatar.style.width = "100%"
-        document.querySelector("#span_avatar").style.padding = "0px"
+        img_avatar.src = `assets/images/${avatar_foto.files[0].name}`
+
+        const span_avatar = document.querySelector("#span_avatar")
+        span_avatar.style.padding = "0px"
     }
     
 })
 
 function submitForms() {
     const full_name = document.getElementById("full_name").value
+
     const email_address = document.getElementById("email_address").value
+
+    if(!verificarEmail(email_address)) {
+        const p = document.createElement("p")
+        const container_email = document.querySelector(".container_email")
+
+        p.textContent = "Teste"
+        container_email.appendChild(p)
+    }
+
     const github_username = document.getElementById("github_username").value
+
     return [full_name, email_address, github_username]
 }
 
-// function ticket() {
-//     const [avatar_foto, full_name, email_address, github_username] = submitForms()
+function ticket() {
+    const [full_name, email_address, github_username] = submitForms()
 
-//     console.log(full_name)
-//     console.log(email_address)
-//     console.log(github_username)
-// }
+    const ticket_avatar = document.querySelector(".ticket_avatar")
+    ticket_avatar.src = `assets/images/${avatar_foto.files[0].name}`
 
-// forms_conf.addEventListener('submit', (event) => {
-//     event.preventDefault()
+    const span_name = document.querySelector(".span_name")
+    const name_ticket = document.querySelector(".name")
 
-//     ticket()
-// })
+    span_name.textContent = full_name
+    name_ticket.textContent = full_name
+
+    const span_email = document.querySelector(".span_email")
+    const github_account = document.querySelector(".github_account")
+
+    span_email.textContent = email_address
+    github_account.textContent = github_username
+
+    const forms_container = document.querySelector(".forms_container")
+    const container_ticket = document.querySelector(".container")
+
+    forms_container.classList.toggle("hidden")
+    container_ticket.classList.toggle("hidden")
+}
+
+forms_conf.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    ticket()
+})

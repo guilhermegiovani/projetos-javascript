@@ -201,14 +201,24 @@ h1 {
     color: white;
 }
 
+.container_email {
+    background-color: rgb(81, 81, 208);
+    width: 380px;
+    margin-top: 20px;
+}
+
 .forms label {
     font-size: 15px;
+}
+
+.label_github {
+    margin-top: 20px;
 }
 
 .forms input {
     width: 380px;
     margin-top: 10px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
@@ -231,6 +241,7 @@ h1 {
     width: 380px;
     height: 100%;
     padding: 15px;
+    margin-top: 20px;
     border-radius: 10px;
     border: none;
     background-color: hsl(7, 88%, 67%);
@@ -389,4 +400,14 @@ h2 {
     height: 100%;
     width: 95px;
     right: 0;
+}
+
+.error {
+    /* color: #9b526a; */
+    color: #9f5151;
+    margin-top: 10px;
+}
+
+.error svg {
+    fill: #9f5151;
 }

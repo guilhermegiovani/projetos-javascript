@@ -19,7 +19,7 @@ emailForm.addEventListener('submit', (event) => {
         messageElement.textContent = "E-mail válido!"
         messageElement.className = "success"
 
-        if(messageElement.className != "hidden") {}
+        // if(messageElement.className != "hidden") {}
 
         setTimeout(() => {
             messageElement.classList.toggle("hidden")

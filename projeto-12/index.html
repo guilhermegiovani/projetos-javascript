@@ -42,7 +42,7 @@
           </div>
 
 
-          <div class="aviso_upload">
+          <div class="aviso_upload error">
             <img src="assets/images/icon-info.svg" alt="info">
             <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
           </div>
@@ -53,9 +53,13 @@
 
           <label for="full_name">Full Name</label>
           <input type="text" id="full_name">
-          <label for="email_address">Email Address</label>
-          <input type="email" id="email_address" placeholder="example@email.com">
-          <label for="github_username">GitHub Username</label>
+
+          <div class="container_email">
+            <label for="email_address">Email Address</label>
+            <input type="email" id="email_address" placeholder="example@email.com">
+          </div>
+
+          <label for="github_username" class="label_github">GitHub Username</label>
           <input type="text" id="github_username" placeholder="@yourusername">
 
         </div>
@@ -68,8 +72,8 @@
 
     <div class="container hidden" >
       <div id="ticket_container">
-        <h1 class="ticket_title">Congrats, <span class="span_name">Guilherme Nobre!</span> Your ticket is ready.</h1>
-        <p class="ticket_text">We've emailed your ticket to <span class="span_email">guiffgnobre16@gmail.com</span> and will send updates in the run up to the event.</p>
+        <h1 class="ticket_title">Congrats, <span class="span_name"></span>! Your ticket is ready.</h1>
+        <p class="ticket_text">We've emailed your ticket to <span class="span_email"></span> and will send updates in the run up to the event.</p>
 
         <div class="ticket">
           <img id="ticket_card" src="assets/images/pattern-ticket.svg" alt="ticket">
@@ -78,12 +82,12 @@
           <h2>Coding Conf</h2>
           <p class="text_data">Jan 31, 2025 / Austin, TX</p>
 
-          <img src="assets/images/image-avatar.jpg" alt="avatar" class="ticket_avatar">
+          <img src="#" alt="avatar" class="ticket_avatar">
           <!-- <div class="name_github">
           </div> -->
-          <h3 class="name">Guilherme Nobre</h3>
+          <h3 class="name"></h3>
           <img src="assets/images/icon-github.svg" alt="github" class="icon_github">
-          <p class="github_account">@guilhermegiovani</p>
+          <p class="github_account"></p>
           <p class="id_number">#01609</p>
 
         </div>
