@@ -35,7 +35,7 @@ avatar_foto.addEventListener('change', (event) => {
     event.preventDefault()
 
     if(avatar_foto.files.length > 0) {
-        const maxSize = 500 * 1024
+        const maxSize = 200 * 1024
         const type = avatar_foto.files[0].type
         const formats = ["image/jpeg", "image/jpg", "image/png"]
 
@@ -45,7 +45,22 @@ avatar_foto.addEventListener('change', (event) => {
         }
 
         if(avatar_foto.files[0].size > maxSize) {
-            alert("Tamanho do arquivo ultrapassou o limite! Tente Novamente")
+            // alert("Tamanho do arquivo ultrapassou o limite! Tente Novamente")
+
+            const error_photo = document.getElementById("aviso_photo")
+            const info = document.getElementById("info_icon")
+            const aviso_upload = document.querySelector(".aviso_upload")
+
+            info.classList.toggle("info_error")
+            error_photo.textContent = "File too large. Please upload a photo under 500KB."
+            aviso_upload.classList.toggle("error")
+
+            setTimeout(() => {
+                info.classList.toggle("info_error")
+                error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+                aviso_upload.classList.toggle("error")
+            }, 3000)
+
             return
         }
 
@@ -56,7 +71,23 @@ avatar_foto.addEventListener('change', (event) => {
 
         const span_avatar = document.querySelector("#span_avatar")
         span_avatar.style.padding = "0px"
-    }
+
+    } 
+    // else {
+    //     const error_photo = document.getElementById("aviso_photo")
+    //     const info = document.getElementById("info_icon")
+    //     const aviso_upload = document.querySelector(".aviso_upload")
+
+    //     info.classList.toggle("info_error")
+    //     error_photo.textContent = "Por Favor, adicione um arquivo!"
+    //     aviso_upload.classList.toggle("error")
+
+    //     setTimeout(() => {
+    //         info.classList.toggle("info_error")
+    //         error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+    //         aviso_upload.classList.toggle("error")
+    //     }, 3000)
+    // }
     
 })
 
@@ -66,11 +97,55 @@ function submitForms() {
     const email_address = document.getElementById("email_address").value
 
     if(!verificarEmail(email_address)) {
+        const div = document.createElement("div")
         const p = document.createElement("p")
         const container_email = document.querySelector(".container_email")
 
-        p.textContent = "Teste"
-        container_email.appendChild(p)
+        const svgNS = "http://www.w3.org/2000/svg"
+        const svg_icon = document.createElementNS(svgNS, "svg")
+
+        svg_icon.setAttribute("width", "16")
+        svg_icon.setAttribute("height", "16")
+        svg_icon.setAttribute("viewBox", "0 0 16 16")
+        svg_icon.setAttribute("fill", "none")
+
+        const path1 = document.createElementNS(svgNS, "path")
+
+        path1.setAttribute("stroke", "#D1D0D5")
+        path1.setAttribute("stroke-linecap", "round")
+        path1.setAttribute("stroke-linejoin", "round")
+        path1.setAttribute("d", "M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z")
+        svg_icon.appendChild(path1)
+
+        const path2 = document.createElementNS(svgNS, "path")
+
+        path2.setAttribute("fill", "#D1D0D5")
+        path2.setAttribute("d", "M8.004 10.462V7.596ZM8 5.57v-.042Z")
+        svg_icon.appendChild(path2)
+
+        const path3 = document.createElementNS(svgNS, "path")
+
+        path3.setAttribute("stroke", "#D1D0D5")
+        path3.setAttribute("stroke-linecap", "round")
+        path3.setAttribute("stroke-linejoin", "round")
+        path3.setAttribute("d", "M8.004 10.462V7.596M8 5.569v-.042")
+        svg_icon.appendChild(path3)
+
+        div.className = "error_email"
+        div.classList.toggle("error")
+
+        p.textContent = "Please a enter a valid email address."
+        p.className = "text_error_email"
+
+        // img_icon.src = "assets/images/icon-info.svg"
+        svg_icon.classList.add("img_icon_email")
+        
+        container_email.appendChild(div)
+        div.append(svg_icon, p)
+
+        // setTimeout(() => {
+        //     container_email.removeChild(div)
+        // }, 3000)
     }
 
     const github_username = document.getElementById("github_username").value
