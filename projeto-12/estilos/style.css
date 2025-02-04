@@ -140,7 +140,8 @@ h1 {
 }
 
 .upload_avatar:focus {
-    border-color: white;
+    outline: 1px solid hsla(252, 6%, 83%, 0.700);
+    outline-offset: 3px;
 }
 
 .upload_avatar label {
@@ -221,7 +222,7 @@ h1 {
 }
 
 .forms input {
-    width: 380px;
+    width: 100%;
     margin-top: 10px;
     /* margin-bottom: 20px; */
     cursor: pointer;
@@ -230,9 +231,22 @@ h1 {
     border: 1px solid hsla(246, 15%, 58%, 0.500);
     background-color: hsla(246, 15%, 58%, 0.150);
     color: hsla(252, 6%, 83%, 0.800);
-    transition: .2s;
+    transition: all .2s ease-in-out;
     outline: none;
+    position: relative;
 }
+
+.forms input:focus {
+    outline: 1px solid hsla(252, 6%, 83%, 0.700);
+    outline-offset: 3px;
+}
+
+/* .focus {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 2px;
+} */
 
 .forms input:hover {
     background-color: hsla(246, 15%, 58%, 0.300);

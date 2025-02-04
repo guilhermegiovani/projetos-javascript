@@ -7,6 +7,12 @@ function verificarEmail(email) {
     return emailRegex.test(email)
 }
 
+function verificarGitHub(github) {
+    const githubRegex = /^@[A-Za-z]+$/
+
+    return githubRegex.test(github)
+}
+
 const upload_avatar = document.querySelector(".upload_avatar")
 
 function onEnter(event) {
@@ -72,97 +78,121 @@ avatar_foto.addEventListener('change', (event) => {
         const span_avatar = document.querySelector("#span_avatar")
         span_avatar.style.padding = "0px"
 
-    } 
-    // else {
-    //     const error_photo = document.getElementById("aviso_photo")
-    //     const info = document.getElementById("info_icon")
-    //     const aviso_upload = document.querySelector(".aviso_upload")
-
-    //     info.classList.toggle("info_error")
-    //     error_photo.textContent = "Por Favor, adicione um arquivo!"
-    //     aviso_upload.classList.toggle("error")
-
-    //     setTimeout(() => {
-    //         info.classList.toggle("info_error")
-    //         error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-    //         aviso_upload.classList.toggle("error")
-    //     }, 3000)
-    // }
+    }
     
 })
 
 function submitForms() {
     const svg_icon = criarInfoIconSvg()
 
+    if(!avatar_foto.files.length > 0) {
+        const error_photo = document.getElementById("aviso_photo")
+        const info = document.getElementById("info_icon")
+        const aviso_upload = document.querySelector(".aviso_upload")
+
+        info.classList.add("info_error")
+        error_photo.textContent = "ERROR! Please add a valid photo!"
+        aviso_upload.classList.add("error")
+
+        const divUploadAvatar = document.querySelector(".upload_avatar")
+
+        divUploadAvatar.addEventListener('click', () => {
+            info.classList.remove("info_error")
+            error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+            aviso_upload.classList.remove("error")
+        })
+    }
+
     const full_name = document.getElementById("full_name").value
 
-    if(full_name == "") {
-        const div = document.createElement("div")
-        const p = document.createElement("p")
+    if(full_name.trim() === "") {
         const container_fullname = document.querySelector(".container_fullname")
         const input_fullname = document.getElementById("full_name")
 
-        div.classList.toggle("error_mensage")
-        div.classList.toggle("error")
+        if(!container_fullname.querySelector("div")) {
+            const div = document.createElement("div")
+            const p = document.createElement("p")
 
-        input_fullname.classList.toggle("input_error")
+            div.classList.toggle("error_mensage")
+            div.classList.toggle("error")
 
-        p.textContent = "Please a enter a valid Full Name."
-        p.className = "text_error"
-        svg_icon.classList.add("img_icon_email")
+            svg_icon.classList.add("img_icon_email")
+            p.textContent = "Please a enter a valid Full Name."
+            p.className = "text_error"
 
-        div.append(svg_icon, p)
-        container_fullname.appendChild(div)
+            div.append(svg_icon, p)
+            container_fullname.appendChild(div)
+
+            input_fullname.classList.add("input_error")
+    
+            input_fullname.addEventListener("click", () => {
+                container_fullname.removeChild(div)
+                input_fullname.classList.toggle("input_error")
+            })
+        }
+
+
     }
 
     const email_address = document.getElementById("email_address").value
 
     if(!verificarEmail(email_address)) {
-        const div = document.createElement("div")
-        const p = document.createElement("p")
         const container_email = document.querySelector(".container_email")
         const input_email = document.getElementById("email_address")
 
-        div.classList.toggle("error_mensage")
-        div.classList.toggle("error")
+        if(!container_email.querySelector("div")) {
+            const div = document.createElement("div")
+            const p = document.createElement("p")
 
-        input_email.classList.toggle("input_error")
+            div.classList.toggle("error_mensage")
+            div.classList.toggle("error")
 
-        svg_icon.classList.add("img_icon")
-        p.textContent = "Please a enter a valid email address."
-        p.className = "text_error"
-        
-        div.append(svg_icon, p)
-        container_email.appendChild(div)
+            svg_icon.classList.add("img_icon")
+            p.textContent = "Please a enter a valid email address."
+            p.className = "text_error"
 
-        // setTimeout(() => {
-        //     container_email.removeChild(div)
-        //     input_email.classList.toggle("input_error")
-        // }, 3000)
+            div.append(svg_icon, p)
+            container_email.appendChild(div)
+
+            input_email.classList.add("input_error")
+
+            input_email.addEventListener("click", () => {
+                container_email.removeChild(div)
+                input_email.classList.toggle("input_error")
+            })
+        }
+
     }
 
     const github_username = document.getElementById("github_username").value
 
-    if(github_username == "") {
-        const div = document.createElement("div")
-        const p = document.createElement("p")
+    if(!verificarGitHub(github_username)) {
         const container_github = document.querySelector(".container_github")
         const input_github = document.getElementById("github_username")
 
-        div.classList.toggle("error_mensage")
-        div.classList.toggle("error")
+        if(!container_github.querySelector("div")) {
+            const div = document.createElement("div")
+            const p = document.createElement("p")
 
-        input_github.classList.toggle("input_error")
+            div.classList.toggle("error_mensage")
+            div.classList.toggle("error")
 
-        svg_icon.classList.add("img_icon")
-        p.textContent = "Please a enter a valid github username."
-        p.className = "text_error"
+            svg_icon.classList.add("img_icon")
+            p.textContent = "Please a enter a valid github username."
+            p.className = "text_error"
+
+            div.append(svg_icon, p)
+            container_github.appendChild(div)
+
+            input_github.classList.add("input_error")
+
+            input_github.addEventListener("click", () => {
+                container_github.removeChild(div)
+                input_github.classList.toggle("input_error")
+            })
+        }
         
-        div.append(svg_icon, p)
-        container_github.appendChild(div)
     }
-
-    // if() {}
 
     return [full_name, email_address, github_username]
 }
@@ -206,30 +236,30 @@ function ticket() {
 
     const ticket_avatar = document.querySelector(".ticket_avatar")
 
-    if(!avatar_foto.files.length > 0) {
-        alert("Adicione um arquivo!")
-    } else {
+    if(avatar_foto.files.length > 0 && full_name != "" && email_address != "" && github_username != "") {
         ticket_avatar.src = `assets/images/${avatar_foto.files[0].name}`
+        ticket_avatar.style.width = "60px"
+        ticket_avatar.style.height = "60px"
+
+        const span_name = document.querySelector(".span_name")
+        const name_ticket = document.querySelector(".name")
+
+        span_name.textContent = full_name
+        name_ticket.textContent = full_name
+
+        const span_email = document.querySelector(".span_email")
+        const github_account = document.querySelector(".github_account")
+
+        span_email.textContent = email_address
+        github_account.textContent = github_username
+
+        const forms_container = document.querySelector(".forms_container")
+        const container_ticket = document.querySelector(".container")
+
+        forms_container.classList.toggle("hidden")
+        container_ticket.classList.toggle("hidden")
     }
 
-
-    const span_name = document.querySelector(".span_name")
-    const name_ticket = document.querySelector(".name")
-
-    span_name.textContent = full_name
-    name_ticket.textContent = full_name
-
-    const span_email = document.querySelector(".span_email")
-    const github_account = document.querySelector(".github_account")
-
-    span_email.textContent = email_address
-    github_account.textContent = github_username
-
-    const forms_container = document.querySelector(".forms_container")
-    const container_ticket = document.querySelector(".container")
-
-    forms_container.classList.toggle("hidden")
-    container_ticket.classList.toggle("hidden")
 }
 
 forms_conf.addEventListener('submit', (event) => {
