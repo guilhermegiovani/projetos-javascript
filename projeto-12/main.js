@@ -41,7 +41,7 @@ avatar_foto.addEventListener('change', (event) => {
     event.preventDefault()
 
     if(avatar_foto.files.length > 0) {
-        const maxSize = 200 * 1024
+        const maxSize = 500 * 1024
         const type = avatar_foto.files[0].type
         const formats = ["image/jpeg", "image/jpg", "image/png"]
 
@@ -83,7 +83,10 @@ avatar_foto.addEventListener('change', (event) => {
 })
 
 function submitForms() {
-    const svg_icon = criarInfoIconSvg()
+    // const svg_icon = criarInfoIconSvg()
+    const icon_error_name = criarInfoIconSvg()
+    const icon_error_email = criarInfoIconSvg()
+    const icon_error_github = criarInfoIconSvg()
 
     if(!avatar_foto.files.length > 0) {
         const error_photo = document.getElementById("aviso_photo")
@@ -116,11 +119,11 @@ function submitForms() {
             div.classList.toggle("error_mensage")
             div.classList.toggle("error")
 
-            svg_icon.classList.add("img_icon_email")
+            icon_error_name.classList.add("img_icon")
             p.textContent = "Please a enter a valid Full Name."
             p.className = "text_error"
 
-            div.append(svg_icon, p)
+            div.append(icon_error_name, p)
             container_fullname.appendChild(div)
 
             input_fullname.classList.add("input_error")
@@ -147,11 +150,11 @@ function submitForms() {
             div.classList.toggle("error_mensage")
             div.classList.toggle("error")
 
-            svg_icon.classList.add("img_icon")
+            icon_error_email.classList.add("img_icon")
             p.textContent = "Please a enter a valid email address."
             p.className = "text_error"
 
-            div.append(svg_icon, p)
+            div.append(icon_error_email, p)
             container_email.appendChild(div)
 
             input_email.classList.add("input_error")
@@ -177,11 +180,11 @@ function submitForms() {
             div.classList.toggle("error_mensage")
             div.classList.toggle("error")
 
-            svg_icon.classList.add("img_icon")
+            icon_error_github.classList.add("img_icon")
             p.textContent = "Please a enter a valid github username."
             p.className = "text_error"
 
-            div.append(svg_icon, p)
+            div.append(icon_error_github, p)
             container_github.appendChild(div)
 
             input_github.classList.add("input_error")
@@ -255,6 +258,12 @@ function ticket() {
 
         const forms_container = document.querySelector(".forms_container")
         const container_ticket = document.querySelector(".container")
+
+        const circle_top = document.querySelector(".circle_top")
+        circle_top.style.left = "58px"
+
+        const circle_center = document.querySelector(".circle_center")
+        circle_center.style.top = "403px"
 
         forms_container.classList.toggle("hidden")
         container_ticket.classList.toggle("hidden")
