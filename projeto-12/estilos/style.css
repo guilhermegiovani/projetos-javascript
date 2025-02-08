@@ -465,6 +465,7 @@ input.input_error {
 
     body {
         height: 855px;
+        width: 405px;
     }
 
     main,
@@ -485,7 +486,7 @@ input.input_error {
 
     .squiggly_line_bottom {
         width: 250px;
-        bottom: 0;
+        bottom: 2;
         z-index: -1;
     }
 
