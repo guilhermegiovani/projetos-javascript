@@ -449,7 +449,6 @@ input.input_error {
     display: flex;
     align-items: center;
     padding-top: 2px;
-    /* font-weight: 600; */
 }
 
 .img_icon {
