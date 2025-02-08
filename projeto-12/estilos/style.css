@@ -461,6 +461,10 @@ input.input_error {
 
 @media screen and (max-width: 400px) {
 
+    body {
+        height: 855px;
+    }
+
     main,
     #forms_conf {
         width: 100%;
@@ -479,7 +483,8 @@ input.input_error {
 
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -45px;
+        bottom: 0;
+        z-index: -1;
     }
 
     .circle_center {
@@ -516,6 +521,7 @@ input.input_error {
 
     #forms_conf button {
         width: 350px;
+        z-index: 10px;
     }
 
 }
