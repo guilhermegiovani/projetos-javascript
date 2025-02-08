@@ -461,51 +461,65 @@ input.input_error {
     stroke: #9f5151;
 }
 
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 700px) {
+
+    html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     body {
         height: 855px;
-        width: 405px;
+        width: 450px;
     }
 
+    main {
+        background-color: rgba(0, 0, 255, 0.302);
+        overflow: hidden;
+    }
+    
     main,
     #forms_conf {
-        width: 100%;
+        width: 375px;
     }
-
+    
     .circle_top {
-        width: 120px;
-        top: -35px;
-        left: -25px;
+        width: 90px;
+        top: -27px;
+        left: 30px;
     }
-
+    
     .squiggly_line_top {
         width: 120px;
         top: 25px;
+        right: 37px;
     }
-
+    
     .squiggly_line_bottom {
         width: 250px;
-        bottom: 2;
+        bottom: -4px;
+        left: 38px;
         z-index: -1;
     }
-
+    
     .circle_center {
-        width: 80px;
-        right: -30px;
-        top: 485px;
+        width: 70px;
+        right: 15px;
+        top: 490px;
     }
-
+    
     .logo_full {
         width: 160px;
     }
-
+    
     h1 {
         font-size: 1.8em;
         width: 350px;
         margin-bottom: 25px;
     }
-
+    
     .subtitulo {
         text-align: center;
         width: 300px;
@@ -514,14 +528,14 @@ input.input_error {
         margin-bottom: 40px;
         color: rgba(255, 255, 255, 0.750);
     }
-
+    
     .upload_avatar,
     .container_email,
     .container_github,
     .container_fullname {
         width: 350px;
     }
-
+    
     #forms_conf button {
         width: 350px;
         z-index: 10px;
