@@ -239,7 +239,7 @@ function ticket() {
 
     const ticket_avatar = document.querySelector(".ticket_avatar")
 
-    if(avatar_foto.files.length > 0 && full_name != "" && email_address != "" && github_username != "") {
+    if(avatar_foto.files.length > 0 && full_name != "" && verificarEmail(email_address) && verificarGitHub(github_username)) {
         ticket_avatar.src = `assets/images/${avatar_foto.files[0].name}`
         ticket_avatar.style.width = "60px"
         ticket_avatar.style.height = "60px"

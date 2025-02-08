@@ -428,10 +428,6 @@ h2 {
     font-weight: 600;
 }
 
-/* .error svg {
-    fill: #9f5151;
-} */
-
 .info_error path {
     stroke: #9f5151;
     /* fill: transparent; */
