@@ -460,39 +460,51 @@ input.input_error {
     stroke: #9f5151;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
+
+    html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     body {
         height: 855px;
-        width: 405px;
+        width: 450px;
+    }
+
+    main {
+        overflow: hidden;
     }
 
     main,
     #forms_conf {
-        width: 100%;
+        width: 375px;
     }
 
     .circle_top {
-        width: 120px;
-        top: -35px;
-        left: -25px;
+        width: 100px;
+        top: -30px;
+        left: 23px;
     }
 
     .squiggly_line_top {
         width: 120px;
         top: 25px;
+        right: 37px;
     }
 
     .squiggly_line_bottom {
         width: 250px;
-        bottom: 2;
+        bottom: -3px;
+        left: 38px;
         z-index: -1;
     }
 
     .circle_center {
-        width: 80px;
-        right: -30px;
-        top: 485px;
+        width: 70px;
+        right: 15px;
+        top: 490px;
     }
 
     .logo_full {
