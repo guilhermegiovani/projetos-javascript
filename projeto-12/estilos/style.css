@@ -460,8 +460,7 @@ input.input_error {
     stroke: #9f5151;
 }
 
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 450px) {
 
     html {
         display: flex;
@@ -475,6 +474,10 @@ input.input_error {
     }
 
     main {
+        overflow: hidden;
+    }
+
+    main {
         background-color: rgba(0, 0, 255, 0.302);
         overflow: hidden;
     }
@@ -485,9 +488,9 @@ input.input_error {
     }
     
     .circle_top {
-        width: 90px;
-        top: -27px;
-        left: 30px;
+        width: 100px;
+        top: -30px;
+        left: 23px;
     }
     
     .squiggly_line_top {
@@ -498,7 +501,7 @@ input.input_error {
     
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -4px;
+        bottom: -3px;
         left: 38px;
         z-index: -1;
     }
