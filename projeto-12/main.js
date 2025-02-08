@@ -1,6 +1,4 @@
-
 const forms_conf = document.getElementById("forms_conf")
-
 
 function verificarEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
