@@ -25,8 +25,9 @@ body {
 
 .circle_top {
     position: absolute;
-    top: -85px;
-    left: 80px;
+    top: -70px;
+    left: 109px;
+    width: 200px;
     pointer-events: none;
 }
 
@@ -37,8 +38,9 @@ body {
 
 .circle_center {
     position: absolute;
-    top: 380px;
-    right: 350px;
+    top: 395px;
+    right: 370px;
+    width: 200px;
     pointer-events: none;
     /* margin-left: -77px; */
 }
