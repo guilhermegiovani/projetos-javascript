@@ -349,10 +349,10 @@ function ticket() {
         const container_ticket = document.querySelector(".container")
 
         const circle_top = document.querySelector(".circle_top")
-        circle_top.style.left = "58px"
+        circle_top.style.left = "65px"
 
         const circle_center = document.querySelector(".circle_center")
-        circle_center.style.top = "403px"
+        circle_center.style.top = "413px"
 
         forms_container.classList.toggle("hidden")
         container_ticket.classList.toggle("hidden")
