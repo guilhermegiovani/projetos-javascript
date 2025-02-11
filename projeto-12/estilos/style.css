@@ -491,26 +491,23 @@ input.input_error {
     .circle_top {
         width: 100px;
         top: -30px;
-        left: 23px;
+        left: -15px;
     }
     
     .squiggly_line_top {
         width: 120px;
         top: 25px;
-        right: 37px;
     }
     
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -3px;
-        left: 38px;
         z-index: -1;
     }
     
     .circle_center {
-        width: 70px;
-        right: 15px;
-        top: 490px;
+        width: 80px;
+        right: -30px;
+        top: 485px;
     }
     
     .logo_full {
