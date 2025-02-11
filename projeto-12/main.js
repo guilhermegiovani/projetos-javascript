@@ -33,13 +33,17 @@ upload_avatar.addEventListener("dragleave", (e) => {
 })
 
 let avatarFoto_drop
-let srcAvatar_drop
+let srcAvatar
+
+const avatar_foto = document.getElementById("upload_avatar")
 
 upload_avatar.addEventListener("drop", (e) => {
     upload_avatar.classList.remove("active"); // Remove destaque
 
     const imgAvatar = document.getElementById("foto_avatar")
     const span_avatar = document.querySelector("#span_avatar")
+
+    if(e.dataTransfer.files.length === 0) return
 
     const file = e.dataTransfer.files[0]; // Pega o arquivo solto
     if(!file) return
@@ -95,23 +99,19 @@ upload_avatar.addEventListener("drop", (e) => {
         };
 
         reader.readAsDataURL(file);
-        avatarFoto_drop = file
+
+        const dataTransfer = new DataTransfer()
+        dataTransfer.items.add(file)
+        avatar_foto.files = dataTransfer.files
     }
 
-    if(file.size > 0) {
+    if(avatar_foto.files.length > 0) {
         avatarFoto_drop = file
-        srcAvatar_drop = imgAvatar.src
+        srcAvatar = `assets/images/${avatar_foto.files[0].name}`
     }
-    
+
+
 });
-
-function dropFile(foto) {
-    const avatar_drop = foto
-
-    return avatar_drop
-}
-
-const avatar_foto = document.getElementById("upload_avatar")
 
 avatar_foto.addEventListener('change', (event) => {
     event.preventDefault()
@@ -155,10 +155,12 @@ avatar_foto.addEventListener('change', (event) => {
             return
         }
 
+        srcAvatar = `assets/images/${avatar_foto.files[0].name}`
+
         const img_avatar = document.getElementById("foto_avatar")
         img_avatar.style.borderRadius = "10px"
         img_avatar.style.width = "100%"
-        img_avatar.src = `assets/images/${avatar_foto.files[0].name}`
+        img_avatar.src = srcAvatar
 
         const span_avatar = document.querySelector("#span_avatar")
         span_avatar.style.padding = "0px"
@@ -326,11 +328,7 @@ function ticket() {
 
     if(avatar_foto.files.length > 0 || avatarFoto_drop.size > 0 && full_name != "" && verificarEmail(email_address) && verificarGitHub(github_username)) {
 
-        if(avatarFoto_drop.size > 0) {
-            ticket_avatar.src = srcAvatar_drop
-        } else {
-            ticket_avatar.src = `assets/images/${avatar_foto.files[0].name}`
-        }
+        ticket_avatar.src = srcAvatar
 
         ticket_avatar.style.width = "60px"
         ticket_avatar.style.height = "60px"
