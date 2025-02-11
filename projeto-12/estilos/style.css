@@ -477,11 +477,6 @@ input.input_error {
     main {
         overflow: hidden;
     }
-
-    main {
-        background-color: rgba(0, 0, 255, 0.302);
-        overflow: hidden;
-    }
     
     main,
     #forms_conf {
