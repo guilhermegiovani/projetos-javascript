@@ -460,26 +460,23 @@ input.input_error {
     stroke: #9f5151;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
 
     html {
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
 
     body {
         height: 855px;
-        width: 450px;
-    }
-
-    main {
-        overflow: hidden;
+        width: 375px;
     }
 
     main,
     #forms_conf {
-        width: 375px;
+        width: 100%;
     }
 
     .circle_top {
