@@ -488,7 +488,7 @@ input.input_error {
     .circle_top {
         width: 100px;
         top: -30px;
-        left: -15px;
+        left: -20px;
     }
 
     .squiggly_line_top {
@@ -498,15 +498,15 @@ input.input_error {
 
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -2px;
+        bottom: -25px;
         z-index: -1;
     }
 
     .circle_center {
         position: absolute;
-        width: 90px;
+        width: 100px;
         right: -35px;
-        top: 480px;
+        top: 475px;
         clip-path: inset(0 35px 0 0);
     }
 
