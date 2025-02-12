@@ -463,14 +463,16 @@ input.input_error {
 @media screen and (max-width: 400px) {
 
     html {
-        overflow: hidden;
+        width: 100vw;
+        overflow-x: hidden;
     }
 
     body {
         position: relative;
         max-width: 100%;
-        overflow: hidden;
-        height: 855px;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     main,
@@ -505,7 +507,7 @@ input.input_error {
         width: 90px;
         right: -35px;
         top: 480px;
-        clip-path: inset(0 20px 0 0);
+        clip-path: inset(0 35px 0 0);
     }
     
     .logo_full {
