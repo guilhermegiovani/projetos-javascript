@@ -498,7 +498,8 @@ input.input_error {
     
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -45px;
+        bottom: -48px;
+        left: 0;
         z-index: -1;
     }
     
@@ -507,7 +508,7 @@ input.input_error {
         width: 100px;
         right: -40px;
         top: 475px;
-        clip-path: inset(0 35px 0 0);
+        clip-path: inset(0 40px 0 0);
     }
     
     .logo_full {
@@ -533,11 +534,11 @@ input.input_error {
     .container_email,
     .container_github,
     .container_fullname {
-        width: 330px;
+        width: 350px;
     }
     
     #forms_conf button {
-        width: 325px;
+        width: 350px;
         z-index: 10px;
     }
 
