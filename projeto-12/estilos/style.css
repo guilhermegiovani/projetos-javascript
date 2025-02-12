@@ -498,14 +498,14 @@ input.input_error {
     
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -25px;
+        bottom: -45px;
         z-index: -1;
     }
     
     .circle_center {
         position: absolute;
         width: 100px;
-        right: -35px;
+        right: -40px;
         top: 475px;
         clip-path: inset(0 35px 0 0);
     }
@@ -533,7 +533,7 @@ input.input_error {
     .container_email,
     .container_github,
     .container_fullname {
-        width: 325px;
+        width: 330px;
     }
     
     #forms_conf button {
