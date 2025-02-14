@@ -12,6 +12,18 @@ function verificarGitHub(github) {
     return githubRegex.test(github)
 }
 
+function showError(info, error_photo, aviso_upload, message) {
+        info.classList.add("info_error")
+        error_photo.textContent = message
+        aviso_upload.classList.add("error")
+
+        setTimeout(() => {
+            info.classList.remove("info_error")
+            error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+            aviso_upload.classList.remove("error")
+        }, 3000)
+}
+
 const upload_avatar = document.querySelector(".upload_avatar")
 
 if(upload_avatar) {
@@ -52,36 +64,40 @@ upload_avatar.addEventListener("drop", (e) => {
     const type = file.type
     const formats = ["image/jpeg", "image/jpg", "image/png"]
 
-    const error_photo = document.getElementById("aviso_photo")
     const info = document.getElementById("info_icon")
+    const error_photo = document.getElementById("aviso_photo")
     const aviso_upload = document.querySelector(".aviso_upload")
 
     if(!formats.includes(type)) {
 
-        info.classList.toggle("info_error")
-        error_photo.textContent = "File format is not allowed! Try Again!"
-        aviso_upload.classList.toggle("error")
+        showError(info, error_photo, aviso_upload, "File format is not allowed! Try Again!")
 
-        setTimeout(() => {
-            info.classList.toggle("info_error")
-            error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-            aviso_upload.classList.toggle("error")
-        }, 3000)
+        // info.classList.toggle("info_error")
+        // error_photo.textContent = "File format is not allowed! Try Again!"
+        // aviso_upload.classList.toggle("error")
+
+        // setTimeout(() => {
+        //     info.classList.toggle("info_error")
+        //     error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+        //     aviso_upload.classList.toggle("error")
+        // }, 3000)
 
         return
     }
 
     if(file.size > maxSize) {
 
-        info.classList.toggle("info_error")
-        error_photo.textContent = "File too large. Please upload a photo under 500KB!"
-        aviso_upload.classList.toggle("error")
+        showError(info, error_photo, aviso_upload, "File too large. Please upload a photo under 500KB!")
 
-        setTimeout(() => {
-            info.classList.toggle("info_error")
-            error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-            aviso_upload.classList.toggle("error")
-        }, 3000)
+        // info.classList.toggle("info_error")
+        // error_photo.textContent = "File too large. Please upload a photo under 500KB!"
+        // aviso_upload.classList.toggle("error")
+
+        // setTimeout(() => {
+        //     info.classList.toggle("info_error")
+        //     error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+        //     aviso_upload.classList.toggle("error")
+        // }, 3000)
 
         return
     }
@@ -100,6 +116,8 @@ upload_avatar.addEventListener("drop", (e) => {
 
         reader.readAsDataURL(file);
 
+        avatar_foto.value = ""
+
         const dataTransfer = new DataTransfer()
         dataTransfer.items.add(file)
         avatar_foto.files = dataTransfer.files
@@ -108,6 +126,10 @@ upload_avatar.addEventListener("drop", (e) => {
     if(avatar_foto.files.length > 0) {
         avatarFoto_drop = file
         srcAvatar = `assets/images/${avatar_foto.files[0].name}`
+    }
+
+    if(avatar_foto == "") {
+        avatarFoto_drop = 0
     }
 
 
@@ -126,31 +148,35 @@ avatar_foto.addEventListener('change', (event) => {
         const aviso_upload = document.querySelector(".aviso_upload")
 
         if(!formats.includes(type)) {
-            
-            info.classList.toggle("info_error")
-            error_photo.textContent = "File format is not allowed! Try Again!"
-            aviso_upload.classList.toggle("error")
 
-            setTimeout(() => {
-                info.classList.toggle("info_error")
-                error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-                aviso_upload.classList.toggle("error")
-            }, 3000)
+            showError(info, error_photo, aviso_upload, "File format is not allowed! Try Again!")
+            
+            // info.classList.toggle("info_error")
+            // error_photo.textContent = "File format is not allowed! Try Again!"
+            // aviso_upload.classList.toggle("error")
+
+            // setTimeout(() => {
+            //     info.classList.toggle("info_error")
+            //     error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+            //     aviso_upload.classList.toggle("error")
+            // }, 3000)
 
             return
         }
 
         if(avatar_foto.files[0].size > maxSize) {
 
-            info.classList.toggle("info_error")
-            error_photo.textContent = "File too large. Please upload a photo under 500KB!"
-            aviso_upload.classList.toggle("error")
+            showError(info, error_photo, aviso_upload, "File too large. Please upload a photo under 500KB!")
 
-            setTimeout(() => {
-                info.classList.toggle("info_error")
-                error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-                aviso_upload.classList.toggle("error")
-            }, 3000)
+            // info.classList.toggle("info_error")
+            // error_photo.textContent = "File too large. Please upload a photo under 500KB!"
+            // aviso_upload.classList.toggle("error")
+
+            // setTimeout(() => {
+            //     info.classList.toggle("info_error")
+            //     error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+            //     aviso_upload.classList.toggle("error")
+            // }, 3000)
 
             return
         }
@@ -175,22 +201,24 @@ function submitForms() {
     const icon_error_email = criarInfoIconSvg()
     const icon_error_github = criarInfoIconSvg()
 
-    if(!avatar_foto.files.length > 0 && !avatarFoto_drop.size > 0) {
-        const error_photo = document.getElementById("aviso_photo")
+    if(!avatar_foto.files.length > 0 && avatarFoto_drop != "") {
         const info = document.getElementById("info_icon")
+        const error_photo = document.getElementById("aviso_photo")
         const aviso_upload = document.querySelector(".aviso_upload")
 
-        info.classList.add("info_error")
-        error_photo.textContent = "ERROR! Please add a valid photo!"
-        aviso_upload.classList.add("error")
+        showError(info, error_photo, aviso_upload, "ERROR! Please add a valid photo!")
 
-        const divUploadAvatar = document.querySelector(".upload_avatar")
+        // info.classList.add("info_error")
+        // error_photo.textContent = "ERROR! Please add a valid photo!"
+        // aviso_upload.classList.add("error")
 
-        divUploadAvatar.addEventListener('click', () => {
-            info.classList.remove("info_error")
-            error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-            aviso_upload.classList.remove("error")
-        })
+        // const divUploadAvatar = document.querySelector(".upload_avatar")
+
+        // divUploadAvatar.addEventListener('click', () => {
+        //     info.classList.remove("info_error")
+        //     error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+        //     aviso_upload.classList.remove("error")
+        // })
     }
 
     const full_name = document.getElementById("full_name").value
@@ -328,7 +356,7 @@ function ticket() {
 
     const ticket_avatar = document.querySelector(".ticket_avatar")
 
-    if(avatar_foto.files.length > 0 || avatarFoto_drop.size > 0 && full_name != "" && verificarEmail(email_address) && verificarGitHub(github_username)) {
+    if(avatar_foto.files.length > 0 || avatarFoto_drop != "" && full_name != "" && verificarEmail(email_address) && verificarGitHub(github_username)) {
 
         ticket_avatar.src = srcAvatar
 
@@ -356,7 +384,7 @@ function ticket() {
         const circle_center = document.querySelector(".circle_center")
         circle_center.style.top = "413px"
 
-        mediaQuery.addEventListener(handleMediaQueryChange)
+        mediaQuery.addEventListener("change", handleMediaQueryChange)
 
         handleMediaQueryChange(mediaQuery)
 
