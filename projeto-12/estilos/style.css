@@ -335,7 +335,7 @@ h1 {
 
 h2 {
     position: absolute;
-    top: 20px;
+    top: 18px;
     left: 65px;
     height: 30px;
     font-size: 1.8em;
@@ -349,7 +349,7 @@ h2 {
     top: 60px;
     left: 65px;
     color: hsla(252, 6%, 83%, 0.850);
-    font-size: .8em;
+    font-size: .9em;
 }
 
 .ticket_avatar {
@@ -403,8 +403,10 @@ h2 {
     color: hsla(252, 6%, 83%, 0.850);
     font-size: .8em;
     height: 18px;
-    display: flex;
+    /* display: flex;
     align-items: center;
+    text-align: center; */
+    padding-top: 2px;
 }
 
 .id_number {
@@ -502,7 +504,15 @@ input.input_error {
         left: 0;
         z-index: -1;
     }
-    
+
+    .line_bottom_ticket {
+        bottom: 0;
+    }
+
+    .circle_center_ticket {
+        top: 550px;
+    }
+
     .circle_center {
         position: absolute;
         width: 100px;
@@ -540,6 +550,58 @@ input.input_error {
     #forms_conf button {
         width: 350px;
         z-index: 10px;
+    }
+
+    .ticket_text {
+        margin-bottom: 80px;
+        width: 350px;
+    }
+    .ticket {
+        z-index: 10px;
+    }
+
+    #ticket_card {
+        width: 350px;
+    }
+
+    /* .ticket_mark {
+        background-color: rgba(0, 0, 255, 0.414);
+    } */
+
+    h2 {
+        font-size: 1.6em;
+        font-weight: 500;
+        top: 15px;
+    }
+
+    .text_data {
+        top: 50px;
+    }
+
+    .ticket_avatar {
+        width: 50px;
+    }
+
+    .name {
+        left: 85px;
+        bottom: 46px;
+    }
+
+    .icon_github {
+        left: 83px;
+    }
+
+    .icon_github,
+    .github_account {
+        bottom: 22px;
+    }
+
+    .github_account {
+        left: 105px;
+    }
+
+    .id_number {
+        width: 65px;
     }
 
 }

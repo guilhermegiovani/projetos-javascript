@@ -321,6 +321,8 @@ function criarInfoIconSvg() {
     return svg_icon
 }
 
+const mediaQuery = window.matchMedia('(max-width: 400px)')
+
 function ticket() {
     const [full_name, email_address, github_username] = submitForms()
 
@@ -354,6 +356,10 @@ function ticket() {
         const circle_center = document.querySelector(".circle_center")
         circle_center.style.top = "413px"
 
+        mediaQuery.addEventListener(handleMediaQueryChange)
+
+        handleMediaQueryChange(mediaQuery)
+
         forms_container.classList.toggle("hidden")
         container_ticket.classList.toggle("hidden")
     }
@@ -365,3 +371,14 @@ forms_conf.addEventListener('submit', (event) => {
 
     ticket()
 })
+
+function handleMediaQueryChange(e) {
+    const squiggly_line_bottom = document.querySelector(".squiggly_line_bottom")
+
+    if(e.matches) {
+        squiggly_line_bottom.classList.add("line_bottom_ticket")
+    } else {
+        squiggly_line_bottom.classList.remove("line_bottom_ticket")
+    }
+
+}
