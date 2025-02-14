@@ -506,11 +506,7 @@ input.input_error {
     }
 
     .line_bottom_ticket {
-        bottom: 0;
-    }
-
-    .circle_center_ticket {
-        top: 550px;
+        bottom: 150px;
     }
 
     .circle_center {
@@ -520,7 +516,11 @@ input.input_error {
         top: 475px;
         clip-path: inset(0 40px 0 0);
     }
-    
+
+    .circle_center_ticket {
+        top: 535px;
+    }
+
     .logo_full {
         width: 160px;
     }

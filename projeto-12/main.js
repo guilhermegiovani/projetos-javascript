@@ -374,11 +374,14 @@ forms_conf.addEventListener('submit', (event) => {
 
 function handleMediaQueryChange(e) {
     const squiggly_line_bottom = document.querySelector(".squiggly_line_bottom")
+    const circle_center = document.querySelector(".circle_center")
 
     if(e.matches) {
         squiggly_line_bottom.classList.add("line_bottom_ticket")
+        circle_center.classList.add("circle_center_ticket")
     } else {
         squiggly_line_bottom.classList.remove("line_bottom_ticket")
+        circle_center.classList.remove("circle_center_ticket")
     }
 
 }
