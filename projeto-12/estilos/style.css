@@ -506,7 +506,7 @@ input.input_error {
     }
 
     .line_bottom_ticket {
-        bottom: 150px;
+        bottom: 0;
     }
 
     .circle_center {
