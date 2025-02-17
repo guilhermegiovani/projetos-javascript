@@ -393,9 +393,9 @@ function ticket() {
         forms_container.classList.toggle("hidden")
         container_ticket.classList.toggle("hidden")
 
+        handleMediaQueryChange(mediaQuery)
         mediaQuery.addEventListener("change", handleMediaQueryChange)
 
-        handleMediaQueryChange(mediaQuery)
     }
 
 }
@@ -413,9 +413,11 @@ function handleMediaQueryChange(e) {
     if(e.matches) {
         squiggly_line_bottom.classList.add("line_bottom_ticket")
         circle_center.classList.add("circle_center_ticket")
+        console.log("teste")
     } else {
         squiggly_line_bottom.classList.remove("line_bottom_ticket")
         circle_center.classList.remove("circle_center_ticket")
+        console.log("teste 2")
     }
 
 }

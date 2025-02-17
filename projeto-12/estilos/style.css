@@ -579,6 +579,7 @@ input.input_error {
 
     .ticket_avatar {
         max-width: 45px;
+        max-height: 45px;
     }
 
     .name {
