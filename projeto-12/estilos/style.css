@@ -571,7 +571,6 @@ input.input_error {
     h2 {
         font-size: 1.6em;
         font-weight: 500;
-        top: 15px;
     }
 
     .text_data {
@@ -579,7 +578,7 @@ input.input_error {
     }
 
     .ticket_avatar {
-        width: 50px;
+        width: 40px;
     }
 
     .name {
