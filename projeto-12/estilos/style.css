@@ -398,15 +398,15 @@ h2 {
 
 .github_account {
     position: absolute;
-    bottom: 27px;
+    bottom: 29px;
     left: 115px;
     color: hsla(252, 6%, 83%, 0.850);
     font-size: .9em;
-    height: 18px;
+    /* height: 18px; */
     /* display: flex;
     align-items: center;
     text-align: center; */
-    padding-top: 2px;
+    /* padding-top: 2px; */
 }
 
 .id_number {
@@ -598,6 +598,7 @@ input.input_error {
 
     .github_account {
         left: 97px;
+        bottom: 23px;
     }
 
     .id_number {
