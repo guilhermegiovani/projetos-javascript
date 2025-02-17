@@ -137,6 +137,12 @@ upload_avatar.addEventListener("drop", (e) => {
 
 avatar_foto.addEventListener('change', (event) => {
     event.preventDefault()
+
+    const file = event.target.files[0]
+
+    if(file) {
+        srcAvatar = URL.createObjectURL(file)
+    }
     
     if(avatar_foto.files.length > 0) {
         const maxSize = 500 * 1024
@@ -181,7 +187,7 @@ avatar_foto.addEventListener('change', (event) => {
             return
         }
 
-        srcAvatar = `assets/images/${avatar_foto.files[0].name}`
+        // srcAvatar = `assets/images/${avatar_foto.files[0].name}`
 
         const img_avatar = document.getElementById("foto_avatar")
         img_avatar.style.borderRadius = "10px"
