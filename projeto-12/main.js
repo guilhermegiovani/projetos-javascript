@@ -390,12 +390,12 @@ function ticket() {
         const circle_center = document.querySelector(".circle_center")
         circle_center.style.top = "413px"
 
+        forms_container.classList.toggle("hidden")
+        container_ticket.classList.toggle("hidden")
+
         mediaQuery.addEventListener("change", handleMediaQueryChange)
 
         handleMediaQueryChange(mediaQuery)
-
-        forms_container.classList.toggle("hidden")
-        container_ticket.classList.toggle("hidden")
     }
 
 }
