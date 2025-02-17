@@ -401,7 +401,7 @@ h2 {
     bottom: 27px;
     left: 115px;
     color: hsla(252, 6%, 83%, 0.850);
-    font-size: .8em;
+    font-size: .9em;
     height: 18px;
     /* display: flex;
     align-items: center;
@@ -569,7 +569,7 @@ input.input_error {
     } */
 
     h2 {
-        font-size: 1.6em;
+        font-size: 1.5em;
         font-weight: 500;
     }
 
@@ -578,16 +578,17 @@ input.input_error {
     }
 
     .ticket_avatar {
-        width: 40px;
+        width: 45px;
     }
 
     .name {
-        left: 85px;
-        bottom: 46px;
+        left: 77px;
+        bottom: 44px;
+        font-size: 1.2em;
     }
 
     .icon_github {
-        left: 83px;
+        left: 75px;
     }
 
     .icon_github,
@@ -596,7 +597,7 @@ input.input_error {
     }
 
     .github_account {
-        left: 105px;
+        left: 98px;
     }
 
     .id_number {
