@@ -500,7 +500,7 @@ input.input_error {
     
     .squiggly_line_bottom {
         width: 250px;
-        bottom: -48px;
+        bottom: -47px;
         left: 0;
         z-index: -1;
     }
