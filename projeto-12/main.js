@@ -395,6 +395,9 @@ function ticket() {
         const circle_center = document.querySelector(".circle_center")
         circle_center.style.top = "413px"
 
+        forms_container.classList.toggle("hidden")
+        container_ticket.classList.toggle("hidden")
+
         handleMediaQueryChange(mediaQuery)
         mediaQuery.addEventListener("change", handleMediaQueryChange)
 
@@ -403,9 +406,6 @@ function ticket() {
         //     span_lastname.textContent = lastName
         //     name_ticket.textContent = full_name
         // }
-
-        forms_container.classList.toggle("hidden")
-        container_ticket.classList.toggle("hidden")
 
     }
 
@@ -427,7 +427,7 @@ function handleMediaQueryChange(e) {
         circle_center.classList.add("circle_center_ticket")
         // span_lastname.classList.add("span_lastname")
 
-        return [firstName, lastName] = separateName(nameFull)
+        // return [firstName, lastName] = separateName(nameFull)
     } else {
         squiggly_line_bottom.classList.remove("line_bottom_ticket")
         circle_center.classList.remove("circle_center_ticket")
