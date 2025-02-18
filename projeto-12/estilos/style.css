@@ -306,7 +306,7 @@ h1 {
 
 .ticket_text {
     color: hsl(252, 6%, 83%);
-    width: 52%;
+    width: 425px;
     text-align: center;
     margin-bottom: 120px;
 }
@@ -506,7 +506,7 @@ input.input_error {
     }
 
     .line_bottom_ticket {
-        bottom: 0;
+        bottom: 0 !important;
     }
 
     .circle_center {
@@ -518,7 +518,7 @@ input.input_error {
     }
 
     .circle_center_ticket {
-        top: 535px;
+        top: 535px !important;
     }
 
     .logo_full {
@@ -551,6 +551,13 @@ input.input_error {
         width: 350px;
         z-index: 10px;
     }
+
+    /* .span_lastname {
+        color: transparent;
+        background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+    } */
 
     .ticket_text {
         margin-bottom: 80px;

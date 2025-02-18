@@ -356,6 +356,9 @@ function criarInfoIconSvg() {
 }
 
 const mediaQuery = window.matchMedia('(max-width: 400px)')
+// let nameFull
+// let firstName
+// let lastName
 
 function ticket() {
     const [full_name, email_address, github_username] = submitForms()
@@ -370,7 +373,9 @@ function ticket() {
         ticket_avatar.style.height = "60px"
 
         const span_name = document.querySelector(".span_name")
+        const span_lastname = document.querySelector("#span_lastname")
         const name_ticket = document.querySelector(".name")
+        // nameFull = full_name
 
         span_name.textContent = full_name
         name_ticket.textContent = full_name
@@ -390,11 +395,17 @@ function ticket() {
         const circle_center = document.querySelector(".circle_center")
         circle_center.style.top = "413px"
 
-        forms_container.classList.toggle("hidden")
-        container_ticket.classList.toggle("hidden")
-
         handleMediaQueryChange(mediaQuery)
         mediaQuery.addEventListener("change", handleMediaQueryChange)
+
+        // if(firstName != "" && lastName != "") {
+        //     span_name.textContent = `${firstName} `
+        //     span_lastname.textContent = lastName
+        //     name_ticket.textContent = full_name
+        // }
+
+        forms_container.classList.toggle("hidden")
+        container_ticket.classList.toggle("hidden")
 
     }
 
@@ -409,15 +420,31 @@ forms_conf.addEventListener('submit', (event) => {
 function handleMediaQueryChange(e) {
     const squiggly_line_bottom = document.querySelector(".squiggly_line_bottom")
     const circle_center = document.querySelector(".circle_center")
+    const span_lastname = document.getElementById("span_lastname")
 
     if(e.matches) {
         squiggly_line_bottom.classList.add("line_bottom_ticket")
         circle_center.classList.add("circle_center_ticket")
-        console.log("teste")
+        // span_lastname.classList.add("span_lastname")
+
+        return [firstName, lastName] = separateName(nameFull)
     } else {
         squiggly_line_bottom.classList.remove("line_bottom_ticket")
         circle_center.classList.remove("circle_center_ticket")
-        console.log("teste 2")
+        // span_lastname.classList.remove("span_lastname")
     }
 
 }
+
+// function separateName(fullName) {
+//     const nameParts = fullName.split(" ")
+//     let firstName
+//     let lastName
+
+//     if(nameParts.length >= 2) {
+//         firstName = nameParts[0]
+//         lastName = nameParts[nameParts.length - 1]
+//     }
+
+//     return [firstName, lastName]
+// }
