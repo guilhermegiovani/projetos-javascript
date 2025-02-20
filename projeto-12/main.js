@@ -398,8 +398,8 @@ function ticket() {
         forms_container.classList.toggle("hidden")
         container_ticket.classList.toggle("hidden")
 
-        handleMediaQueryChange(mediaQuery)
         mediaQuery.addEventListener("change", handleMediaQueryChange)
+        handleMediaQueryChange(mediaQuery)
 
         // if(firstName != "" && lastName != "") {
         //     span_name.textContent = `${firstName} `
@@ -420,17 +420,20 @@ forms_conf.addEventListener('submit', (event) => {
 function handleMediaQueryChange(e) {
     const squiggly_line_bottom = document.querySelector(".squiggly_line_bottom")
     const circle_center = document.querySelector(".circle_center")
+    const circle_top = document.querySelector(".circle_top")
     const span_lastname = document.getElementById("span_lastname")
 
     if(e.matches) {
         squiggly_line_bottom.classList.add("line_bottom_ticket")
         circle_center.classList.add("circle_center_ticket")
+        circle_top.classList.add("circle_top_ticket")
         // span_lastname.classList.add("span_lastname")
 
         // return [firstName, lastName] = separateName(nameFull)
     } else {
         squiggly_line_bottom.classList.remove("line_bottom_ticket")
         circle_center.classList.remove("circle_center_ticket")
+        circle_top.classList.remove("circle_top_ticket")
         // span_lastname.classList.remove("span_lastname")
     }
 

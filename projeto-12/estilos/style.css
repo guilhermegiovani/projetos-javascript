@@ -31,11 +31,6 @@ body {
     pointer-events: none;
 }
 
-/* .circle_top_ticket {
-    top: -85px;
-    left: 58px;
-} */
-
 .circle_center {
     position: absolute;
     top: 395px;
@@ -489,9 +484,14 @@ input.input_error {
 
     .circle_top {
         width: 100px;
-        top: -30px;
-        left: -20px;
+        top: -30px !important;
+        left: -20px !important;
     }
+
+    /* .circle_top_ticket {
+        top: -30px !important;
+        left: -20px !important;
+    } */
     
     .squiggly_line_top {
         width: 120px;
