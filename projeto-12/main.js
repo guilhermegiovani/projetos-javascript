@@ -364,8 +364,9 @@ function ticket() {
     const [full_name, email_address, github_username] = submitForms()
 
     const ticket_avatar = document.querySelector(".ticket_avatar")
+    const fotoAdicionada = avatar_foto.files.length > 0 || avatarFoto_drop !== undefined
 
-    if(avatar_foto.files.length > 0 || avatarFoto_drop != "" && full_name != "" && verificarEmail(email_address) && verificarGitHub(github_username)) {
+    if(fotoAdicionada && full_name != "" && verificarEmail(email_address) && verificarGitHub(github_username)) {
 
         ticket_avatar.src = srcAvatar
 
