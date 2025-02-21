@@ -270,15 +270,9 @@ avatar_foto.addEventListener('change', (event) => {
 
             if(!labelInputFile.contains(textUpload)) {
                 labelInputFile.appendChild(textUpload)
+                labelInputFile.classList.add("hover_effect")
             }
-
-
-            // if(!labelInputFile.querySelector(".text_upload")) {
-            //     labelInputFile.appendChild(textUpload)
-            // }
-
-            labelInputFile.classList.add("hover_effect")
-
+            
             avatar_foto.value = ""
         })
 
