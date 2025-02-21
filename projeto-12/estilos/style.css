@@ -127,6 +127,51 @@ h1 {
     color: hsl(252, 6%, 83%);
 }
 
+.divBtnsAvatar {
+    display: flex;
+    gap: 5px;
+}
+
+.btnRemove,
+.btnChange {
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: .6em;
+    font-weight: 400;
+    border: none;
+    background-color: hsla(245, 15%, 58%, 0.150);
+}
+
+.btnRemove {
+    color: hsla(252, 6%, 83%, 0.650);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    transition: .2s;
+}
+
+.btnRemove::after {
+    content: "";
+    position: absolute;
+    bottom: 3.5px;
+    left: 9px;
+    width: 63px; 
+    height: .5px;
+    background-color: hsla(252, 6%, 83%, 0.650);
+}
+
+.btnRemove:hover,
+.btnChange:hover {
+    background-color:  hsla(246, 15%, 58%, 0.300);
+}
+
+.btnChange {
+    color: hsla(252, 6%, 83%, 0.850)
+}
+
 .upload_avatar {
     border: 2px dashed hsla(246, 15%, 58%, 0.500);
     border-radius: 10px;
@@ -152,7 +197,7 @@ h1 {
     transition: .3s;
 }
 
-.upload_avatar label:hover {
+.hover_effect:hover {
     background-color: hsla(246, 15%, 58%, 0.300);
 
     span {
@@ -252,7 +297,7 @@ h1 {
     color: hsla(252, 6%, 83%, 0.800);
 }
 
-#forms_conf button {
+#btn_forms {
     width: 380px;
     height: 100%;
     padding: 15px;
@@ -266,7 +311,7 @@ h1 {
     transition: .2s;
 }
 
-#forms_conf button:hover {
+#btn_forms:hover {
     background-color: hsl(7, 71%, 60%);
     box-shadow: 0px 3px 0px hsl(7, 88%, 67%);
 }

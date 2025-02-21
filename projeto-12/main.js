@@ -13,15 +13,38 @@ function verificarGitHub(github) {
 }
 
 function showError(info, error_photo, aviso_upload, message) {
-        info.classList.add("info_error")
-        error_photo.textContent = message
-        aviso_upload.classList.add("error")
+    info.classList.add("info_error")
+    error_photo.textContent = message
+    aviso_upload.classList.add("error")
 
-        setTimeout(() => {
-            info.classList.remove("info_error")
-            error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
-            aviso_upload.classList.remove("error")
-        }, 3000)
+    setTimeout(() => {
+        info.classList.remove("info_error")
+        error_photo.textContent = "Upload your photo (JPG or PNG, max size: 500KB)."
+        aviso_upload.classList.remove("error")
+    }, 3000)
+}
+
+function btnRemoveAvatar() {
+    const btnRemove = document.createElement("button")
+    btnRemove.textContent = "Remove image"
+    btnRemove.classList.add("btnRemove")
+
+    return btnRemove
+}
+
+function btnChangeAvatar() {
+    const btnChange = document.createElement("button")
+    btnChange.textContent = "Change image"
+    btnChange.classList.add("btnChange")
+
+    return btnChange
+}
+
+function divBtnsAvatar() {
+    const div = document.createElement("div")
+    div.classList.add("divBtnsAvatar")
+
+    return div
 }
 
 const upload_avatar = document.querySelector(".upload_avatar")
@@ -47,7 +70,7 @@ upload_avatar.addEventListener("dragleave", (e) => {
 let avatarFoto_drop
 let srcAvatar
 
-const avatar_foto = document.getElementById("upload_avatar")
+let avatar_foto = document.getElementById("upload_avatar")
 
 upload_avatar.addEventListener("drop", (e) => {
     upload_avatar.classList.remove("active"); // Remove destaque
@@ -142,6 +165,8 @@ avatar_foto.addEventListener('change', (event) => {
 
     if(file) {
         srcAvatar = URL.createObjectURL(file)
+    } else {
+        return
     }
     
     if(avatar_foto.files.length > 0) {
@@ -196,6 +221,72 @@ avatar_foto.addEventListener('change', (event) => {
 
         const span_avatar = document.querySelector("#span_avatar")
         span_avatar.style.padding = "0px"
+
+        const labelInputFile = document.getElementById("label_avatar")
+        const textUpload = document.querySelector(".text_upload")
+
+        const oldBtsDiv = document.querySelector(".divBtnsAvatar")
+        if(oldBtsDiv) {
+            labelInputFile.removeChild(oldBtsDiv)
+        }
+
+        const btnRemove = btnRemoveAvatar()
+        const btnChange = btnChangeAvatar()
+        const divBtns = divBtnsAvatar()
+
+        divBtns.append(btnRemove, btnChange)
+
+        if(labelInputFile.contains(textUpload)) {
+            labelInputFile.removeChild(textUpload)
+        }
+        
+        // if(labelInputFile.querySelector(".text_upload")) {
+        //     labelInputFile.removeChild(textUpload)
+        // }
+
+        labelInputFile.appendChild(divBtns)
+
+        if(labelInputFile.querySelector("button")) {
+            labelInputFile.classList.remove("hover_effect")
+        }
+
+        btnRemove.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            img_avatar.src = "assets/images/icon-upload.svg"
+            img_avatar.style.width = "25px"
+            
+            if(labelInputFile.contains(divBtns)) {
+                labelInputFile.removeChild(divBtns)
+            }
+
+            let textUpload = document.querySelector(".text_upload");
+
+            if(!textUpload) {
+                textUpload = document.createElement("p")
+                textUpload.classList.add("text_upload")
+                textUpload.textContent = "Drag and drop or click to upload"
+            }
+
+            if(!labelInputFile.contains(textUpload)) {
+                labelInputFile.appendChild(textUpload)
+            }
+
+
+            // if(!labelInputFile.querySelector(".text_upload")) {
+            //     labelInputFile.appendChild(textUpload)
+            // }
+
+            labelInputFile.classList.add("hover_effect")
+
+            avatar_foto.value = ""
+        })
+
+        btnChange.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            avatar_foto.click()
+        })
 
     }
     
