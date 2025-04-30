@@ -663,4 +663,8 @@ input.input_error {
         max-width: 90px;
     }
 
+    .btnRemove::after {
+        left: 13px;
+    }
+
 }
