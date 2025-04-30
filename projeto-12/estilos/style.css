@@ -664,7 +664,8 @@ input.input_error {
     }
 
     .btnRemove::after {
-        left: 13px;
+        width: 62px;
+        left: 14px;
     }
 
 }
