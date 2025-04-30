@@ -155,6 +155,62 @@ upload_avatar.addEventListener("drop", (e) => {
         avatarFoto_drop = 0
     }
 
+    const labelInputFile = document.getElementById("label_avatar")
+    const textUpload = document.querySelector(".text_upload")
+
+    const oldBtsDiv = document.querySelector(".divBtnsAvatar")
+        if(oldBtsDiv) {
+            labelInputFile.removeChild(oldBtsDiv)
+        }
+
+        const btnRemove = btnRemoveAvatar()
+        const btnChange = btnChangeAvatar()
+        const divBtns = divBtnsAvatar()
+
+        divBtns.append(btnRemove, btnChange)
+
+        if(labelInputFile.contains(textUpload)) {
+            labelInputFile.removeChild(textUpload)
+        }
+
+        labelInputFile.appendChild(divBtns)
+
+        if(labelInputFile.querySelector("button")) {
+            labelInputFile.classList.remove("hover_effect")
+        }
+
+        btnRemove.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            imgAvatar.src = "assets/images/icon-upload.svg"
+            imgAvatar.style.width = "25px"
+            
+            if(labelInputFile.contains(divBtns)) {
+                labelInputFile.removeChild(divBtns)
+            }
+
+            let textUpload = document.querySelector(".text_upload");
+
+            if(!textUpload) {
+                textUpload = document.createElement("p")
+                textUpload.classList.add("text_upload")
+                textUpload.textContent = "Drag and drop or click to upload"
+            }
+
+            if(!labelInputFile.contains(textUpload)) {
+                labelInputFile.appendChild(textUpload)
+                labelInputFile.classList.add("hover_effect")
+            }
+            
+            avatar_foto.value = ""
+        })
+
+        // btnChange.addEventListener("click", (e) => {
+        //     e.preventDefault()
+
+        //     avatar_foto.click()
+        // })
+
 
 });
 
@@ -239,10 +295,6 @@ avatar_foto.addEventListener('change', (event) => {
         if(labelInputFile.contains(textUpload)) {
             labelInputFile.removeChild(textUpload)
         }
-        
-        // if(labelInputFile.querySelector(".text_upload")) {
-        //     labelInputFile.removeChild(textUpload)
-        // }
 
         labelInputFile.appendChild(divBtns)
 
