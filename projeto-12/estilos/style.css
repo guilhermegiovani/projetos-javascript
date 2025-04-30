@@ -658,4 +658,9 @@ input.input_error {
         width: 65px;
     }
 
+    .btnRemove,
+    .btnChange {
+        max-width: 90px;
+    }
+
 }
